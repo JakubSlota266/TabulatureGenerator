@@ -1,6 +1,6 @@
 #include "tabGenerator.h"
 #include <stdio.h>
-
+#include "Windows.h"
 
 char changeEnumToChar(notes nameOfString)
 {
@@ -23,7 +23,7 @@ char changeEnumToChar(notes nameOfString)
     }
 }
 
-void showTabalature(char tabs[ROWS][COLLS])
+void showTabulature(char tabs[ROWS][COLLS])
 {
     for (int i = 0; i < ROWS; i++)
     {
@@ -37,7 +37,7 @@ void showTabalature(char tabs[ROWS][COLLS])
 
 void loadEmptySheet(char tabs[ROWS][COLLS])
 {
-    for(notes nameOfString; nameOfString < ROWS; nameOfString++)
+    for(notes nameOfString = 0; nameOfString < ROWS; nameOfString++)
     {
         for(int j = 0; j < COLLS; j++)
         {

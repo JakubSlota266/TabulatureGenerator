@@ -10,7 +10,7 @@ int main()
 
     char tabs[ROWS][COLLS];
     loadEmptySheet(tabs);
-    showTabalature(tabs);
-    
+    showTabulature(tabs);
+
     return 0;
 }

@@ -15,7 +15,7 @@ typedef enum guitarStringNotes
 }notes;
 
 char changeEnumToChar(notes nameOfString);
-void showTabalature(char tabs[ROWS][COLLS]);
+void showTabulature(char tabs[ROWS][COLLS]);
 void loadEmptySheet(char tabs[ROWS][COLLS]);
 void placeNoteOnTab(char* tab, notes nameOfString, int numberOfThread);
 
