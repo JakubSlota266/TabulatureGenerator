@@ -1,4 +1,6 @@
 #include "tabGenerator.h"
+#include <stdio.h>
+
 
 char changeEnumToChar(notes nameOfString)
 {
@@ -21,17 +23,39 @@ char changeEnumToChar(notes nameOfString)
     }
 }
 
-void showTabalature(char* tabs, int rows, int colls)
+void showTabalature(char tabs[ROWS][COLLS])
 {
-    for (int i = 0; i < rows; i++)
+    for (int i = 0; i < ROWS; i++)
     {
-      for (int j = 0; j < colls; j++)
+      for (int j = 0; j < COLLS; j++)
       {
-        printf("%c ", *((tabs + i * colls) + j));
+        printf("%c ", tabs[i][j]);
       }
       printf("\n");
     }
 } 
+
+void loadEmptySheet(char tabs[ROWS][COLLS])
+{
+    for(notes nameOfString; nameOfString < ROWS; nameOfString++)
+    {
+        for(int j = 0; j < COLLS; j++)
+        {
+            if(j == 0)
+            {
+                tabs[nameOfString][j] = changeEnumToChar(nameOfString);
+            }
+            else if(j == 1)
+            {
+                tabs[nameOfString][j] = '|';
+            }
+            else
+            {
+                tabs[nameOfString][j] = '-';
+            }
+        }
+    }
+}
 
 void placeNoteOnTab(char* tab, notes nameOfString, int numberOfThread)
 {
