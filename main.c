@@ -7,7 +7,7 @@ int main()
     notes notes;
 
     printf("Welcome to Tab Generator by Jakub266!\n");
-    printf("#######################################\n");
+    drawSeparationHashtagLine();
 
     char tabs[ROWS][COLLS];
     loadEmptySheet(tabs);
@@ -15,7 +15,7 @@ int main()
 
     for(int i = 0; i < COLLS - GRAPHICAL_OFFSET; i++)
     {
-    placeNoteOnTab(tabs, rand()%6, rand() % 5 + 1);
+        placeNoteOnTab(tabs, rand()%6, rand() % 5 + 1);
     }
 
     showTabulature(tabs);

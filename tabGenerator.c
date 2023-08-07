@@ -52,7 +52,7 @@ void showTabulature(char tabs[ROWS][COLLS])
       }
       printf("\n");
     }
-    printf("#######################################\n");
+    drawSeparationHashtagLine();
 } 
 
 void loadEmptySheet(char tabs[ROWS][COLLS])
@@ -61,11 +61,11 @@ void loadEmptySheet(char tabs[ROWS][COLLS])
     {
         for(int j = 0; j < COLLS; j++)
         {
-            if(j == 0)
+            if(j == INDEX_OF_NOTES)
             {
                 tabs[nameOfString][j] = changeEnumToChar(nameOfString);
             }
-            else if(j == 1)
+            else if(j == INDEX_OF_SEPERATION_LINE)
             {
                 tabs[nameOfString][j] = '|';
             }
@@ -81,4 +81,13 @@ void placeNoteOnTab(char tabs[ROWS][COLLS], notes nameOfString, int numberOfThre
 {
     static int index = GRAPHICAL_OFFSET;
     tabs[nameOfString][index++] = changeNumToChar(numberOfThread);
+}
+
+void drawSeparationHashtagLine()
+{
+    for(int i = 0; i < COLLS * 2; i++)
+    {
+        printf("#");
+    }
+    printf("\n");
 }
