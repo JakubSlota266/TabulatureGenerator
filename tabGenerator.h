@@ -3,7 +3,7 @@
 
 #define ROWS 6
 #define COLLS 20
-
+#define GRAPHICAL_OFFSET 2
 typedef enum guitarStringNotes
 {
     E,
@@ -17,6 +17,6 @@ typedef enum guitarStringNotes
 char changeEnumToChar(notes nameOfString);
 void showTabulature(char tabs[ROWS][COLLS]);
 void loadEmptySheet(char tabs[ROWS][COLLS]);
-void placeNoteOnTab(char* tab, notes nameOfString, int numberOfThread);
+void placeNoteOnTab(char tabs[ROWS][COLLS], notes nameOfString, int numberOfThread);
 
 #endif

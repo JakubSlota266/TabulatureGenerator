@@ -23,6 +23,25 @@ char changeEnumToChar(notes nameOfString)
     }
 }
 
+char changeNumToChar(int num)
+{
+    switch(num)
+    {
+        case 1:
+            return '1';
+        case 2:
+            return '2';
+        case 3:
+            return '3';
+        case 4:
+            return '4';
+        case 5:
+            return '5';
+        default:
+            return '*';
+    }
+}
+
 void showTabulature(char tabs[ROWS][COLLS])
 {
     for (int i = 0; i < ROWS; i++)
@@ -33,6 +52,7 @@ void showTabulature(char tabs[ROWS][COLLS])
       }
       printf("\n");
     }
+    printf("#######################################\n");
 } 
 
 void loadEmptySheet(char tabs[ROWS][COLLS])
@@ -57,7 +77,8 @@ void loadEmptySheet(char tabs[ROWS][COLLS])
     }
 }
 
-void placeNoteOnTab(char* tab, notes nameOfString, int numberOfThread)
+void placeNoteOnTab(char tabs[ROWS][COLLS], notes nameOfString, int numberOfThread)
 {
-
+    static int index = GRAPHICAL_OFFSET;
+    tabs[nameOfString][index++] = changeNumToChar(numberOfThread);
 }
